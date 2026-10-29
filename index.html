@@ -1,116 +1,302 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl" data-brand="ezzat">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>عزت شيخ محمد — تسويق رقمي وصناعة محتوى</title>
-<meta name="description" content="عزت شيخ محمد، أخصائي تسويق رقمي في دبي. صاحب نيون براند وريل أدز.">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="icon" type="image/png" href="assets/img/basketball.png">
-<style>
-  .hero{padding:120px 0 100px;}
-  .hero-eyebrow{font-size:15px;color:var(--muted);margin:0 0 18px;}
-  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,6vw,72px);line-height:1.12;margin:0 0 28px;max-width:14ch;}
-  .hero h1 em{font-style:normal;color:var(--accent);}
-  .hero p{font-family:var(--serif);font-size:19px;line-height:1.8;color:var(--muted);max-width:56ch;margin:0 0 36px;}
-  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
-
-  .ventures{padding:20px 0 100px;}
-  .ventures h2{font-family:var(--display);font-size:28px;font-weight:500;margin:0 0 40px;}
-  .venture-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);}
-  @media(max-width:760px){.venture-grid{grid-template-columns:1fr;}}
-  .venture{background:var(--bg);padding:52px 40px;text-decoration:none;color:inherit;position:relative;overflow:hidden;
-    transition:padding-inline-start .35s ease;}
-  .venture:hover{padding-inline-start:56px;}
-  .venture-tag{display:inline-block;font-size:13px;padding:5px 12px;border-radius:20px;margin-bottom:26px;font-weight:500;}
-  .v-neon{background:#fbfbfa;color:#0c0c0c;}
-  .v-neon .venture-tag{background:#cdfb1a;color:#0c0c0c;}
-  .v-reel{background:#0a0a0c;color:#f3f1f6;}
-  .v-reel .venture-tag{background:#7a3bf0;color:#f3f1f6;}
-  .venture h3{font-family:var(--display);font-size:32px;font-weight:700;margin:0 0 14px;}
-  .venture p{font-family:var(--serif);font-size:16px;line-height:1.75;opacity:.75;margin:0 0 30px;max-width:38ch;}
-  .venture .go{font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:8px;}
-  .v-neon .go{color:#0c0c0c;}
-  .v-reel .go{color:#f3f1f6;}
-  .go svg{transition:transform .25s ease;}
-  .venture:hover .go svg{transform:translateX(-4px);}
-
-  .about{padding:0 0 110px;display:grid;grid-template-columns:1fr 1.3fr;gap:60px;}
-  @media(max-width:760px){.about{grid-template-columns:1fr;gap:36px;}}
-  .about h2{font-family:var(--display);font-size:28px;font-weight:500;margin:0;}
-  .about p{font-family:var(--serif);font-size:17px;line-height:1.85;color:var(--muted);margin:0 0 20px;}
-  .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
-  .skills span{font-size:14px;border:1px solid var(--line);padding:8px 16px;border-radius:20px;color:var(--muted);}
-</style>
+<title>عزت شيخ محمد — NEON | صناعة محتوى وتسويق رقمي</title>
+<meta name="description" content="بورتفوليو عزت شيخ محمد — صانع محتوى وأخصائي سوشال ميديا وإعلانات ميتا في دبي. فيديوهات UGC، تصميم، واستراتيجيات محتوى تبيع.">
+<meta name="theme-color" content="#0B0612">
+<meta property="og:title" content="عزت شيخ محمد — NEON">
+<meta property="og:description" content="محتوى يوقف التمرير ويحرّك المبيعات.">
+<meta property="og:image" content="assets/img/brand/neon-3.webp">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<link rel="preload" href="assets/fonts/thmanyah-sans-Black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
 </head>
-<body data-brand="ezzat">
+<body class="is-loading">
 
-<nav class="nav">
-  <div class="wrap">
-    <a href="index.html" class="nav-name"><img src="assets/img/basketball.png" alt="شعار عزت شيخ محمد" class="nav-logo">عزت <span>شيخ محمد</span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" class="active">الرئيسية</a></li>
-      <li><a href="neon-brand.html">نيون براند</a></li>
-      <li><a href="reel-ads.html">ريل أدز</a></li>
-      <li><a href="#contact">تواصل</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="القائمة">☰</button>
-  </div>
-</nav>
+<!-- Preloader -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__logo"></div>
+  <div class="loader__count"><span>0</span>%</div>
+  <div class="loader__bars"><i></i><i></i><i></i></div>
+</div>
 
-<header class="hero">
-  <div class="wrap">
-    <p class="hero-eyebrow">دبي — تسويق رقمي ووسائل التواصل الاجتماعي</p>
-    <h1>أبني علامات تُشاهَد، وإعلانات <em>تُحقق نتائج</em></h1>
-    <p>خمس سنوات في إدارة حملات ميتا، استراتيجية المحتوى، وتوليد العملاء المحتملين. أدير مشروعين: نيون براند للوحات المضيئة، وريل أدز لصناعة محتوى إعلاني يبيع.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-solid">لنتحدث عن مشروعك</a>
-      <a href="neon-brand.html" class="btn btn-line">تصفّح أعمالي</a>
-    </div>
-  </div>
+<!-- Cursor -->
+<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Header -->
+<header class="nav">
+  <a href="#top" class="nav__logo" aria-label="NEON — الرئيسية" data-magnetic></a>
+  <nav class="nav__links" aria-label="القائمة">
+    <a href="#work" data-magnetic>الأعمال</a>
+    <a href="#services" data-magnetic>الخدمات</a>
+    <a href="#designs" data-magnetic>التصاميم</a>
+    <a href="#about" data-magnetic>عنّي</a>
+  </nav>
+  <a href="#contact" class="nav__cta btn btn--lime" data-magnetic><span>لنتحدث</span></a>
+  <button class="nav__burger" aria-label="القائمة" aria-expanded="false"><i></i><i></i></button>
 </header>
 
-<section class="ventures">
-  <div class="wrap">
-    <h2>مشاريعي</h2>
-  </div>
-  <div class="venture-grid">
-    <a href="neon-brand.html" class="venture v-neon">
-      <span class="venture-tag">لوحات مضيئة</span>
-      <h3>نيون براند</h3>
-      <p>لوحات نيون مصممة بالطلب، تحوّل واجهة محلك أو غرفتك إلى مساحة يتذكرها الزوار.</p>
-      <span class="go">اكتشف التصاميم
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>
-    </a>
-    <a href="reel-ads.html" class="venture v-reel">
-      <span class="venture-tag">محتوى إعلاني</span>
-      <h3>ريل أدز</h3>
-      <p>ريلز إعلانية مصمَّمة لتوقف التمرير وتدفع للشراء، من الفكرة حتى قياس النتيجة.</p>
-      <span class="go">شاهد النتائج
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>
-    </a>
-  </div>
-</section>
+<div class="menu" aria-hidden="true">
+  <a href="#work">الأعمال</a>
+  <a href="#services">الخدمات</a>
+  <a href="#designs">التصاميم</a>
+  <a href="#about">عنّي</a>
+  <a href="#contact">تواصل</a>
+</div>
 
-<section class="about wrap" id="about">
-  <h2>خلاصة</h2>
-  <div>
-    <p>أعمل في وكالة Zeed، وأتابع حالياً ماجستير إدارة الأعمال في الجامعة الافتراضية السورية بدراسات في إدارة العمليات، المحاسبة، والقانون التجاري — خلفية أستخدمها لبناء حملات تُقاس بالأرقام لا بالانطباع.</p>
-    <div class="skills">
-      <span>Meta Ads</span><span>إدارة الحملات</span><span>استراتيجية المحتوى</span><span>توليد العملاء المحتملين</span><span>تحليل الأداء</span>
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" data-theme="dark">
+    <div class="hero__reels" aria-hidden="true">
+      <div class="hero__col"><video muted loop playsinline preload="none" data-src="assets/video/titanium-2.mp4" poster="assets/video/titanium-2.webp"></video><video muted loop playsinline preload="none" data-src="assets/video/glow-1.mp4" poster="assets/video/glow-1.webp"></video></div>
+      <div class="hero__col"><video muted loop playsinline preload="none" data-src="assets/video/gallery-1.mp4" poster="assets/video/gallery-1.webp"></video><video muted loop playsinline preload="none" data-src="assets/video/brusho-1.mp4" poster="assets/video/brusho-1.webp"></video></div>
+      <div class="hero__col"><video muted loop playsinline preload="none" data-src="assets/video/sign-1.mp4" poster="assets/video/sign-1.webp"></video><video muted loop playsinline preload="none" data-src="assets/video/titanium-4.mp4" poster="assets/video/titanium-4.webp"></video></div>
+    </div>
+    <div class="hero__shade"></div>
+
+    <div class="hero__inner">
+      <p class="hero__kicker reveal-up"><span class="dot"></span> دبي — صناعة محتوى · سوشال ميديا · إعلانات ميتا</p>
+      <h1 class="hero__title">
+        <span class="line"><span class="line__in">عزت شيخ محمد</span></span>
+        <span class="line line--rot"><span class="line__in">أصنع محتوى
+          <span class="rotator" aria-live="polite">
+            <span class="rotator__word is-on" data-c="orange">يوقف التمرير</span>
+            <span class="rotator__word" data-c="lime">يبيع فعلاً</span>
+            <span class="rotator__word" data-c="purple">يُحفَظ ويُشارَك</span>
+            <span class="rotator__word" data-c="orange">يكبّر علامتك</span>
+          </span>
+        </span></span>
+      </h1>
+      <div class="hero__foot reveal-up">
+        <p>كاتب محتوى، مصوّر UGC، مصمم سوشال ومدير حملات — أحوّل فكرة المنتج إلى قصة قصيرة تُشاهَد حتى النهاية.</p>
+        <div class="hero__btns">
+          <a href="#work" class="btn btn--orange" data-magnetic><span>شاهد الأعمال</span></a>
+          <a href="https://www.instagram.com/neon8.888/" target="_blank" rel="noopener" class="btn btn--ghost" data-magnetic><span>@neon8.888</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true"><span>مرّر</span><i></i></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track" data-speed="1">
+      <span>UGC</span><b>✺</b><span>كتابة محتوى</span><b>✺</b><span>Meta Ads</span><b>✺</b><span>تصوير منتجات</span><b>✺</b><span>مونتاج ريلز</span><b>✺</b><span>تصميم سوشال</span><b>✺</b><span>استراتيجية</span><b>✺</b>
     </div>
   </div>
-</section>
 
-<footer class="site-footer" id="contact">
-  <div class="wrap">
-    <span>© 2026 عزت شيخ محمد</span>
-    <a href="mailto:hello@ezzatsheikh.com">hello@ezzatsheikh.com</a>
+  <!-- MANIFESTO -->
+  <section class="manifesto" data-theme="dark">
+    <p class="manifesto__label">— الفكرة</p>
+    <p class="manifesto__text" data-words>المحتوى الجيد لا يُرى فقط… بل يُشعَر به. أبدأ من سؤال واحد: لماذا يتوقف الناس هنا؟ ثم أبني الهوك، والقصة، والصورة، والإعلان، حتى تتحول المشاهدة إلى ثقة، والثقة إلى مبيعات.</p>
+  </section>
+
+  <!-- WORK / REELS -->
+  <section class="work" id="work" data-theme="purple">
+    <div class="sec-head">
+      <p class="sec-head__num">01</p>
+      <h2 class="sec-head__title split-words">فيديوهات من تصويري وإخراجي</h2>
+      <div class="filters" role="tablist">
+        <button class="is-on" data-f="all" data-magnetic>الكل</button>
+        <button data-f="ugc" data-magnetic>UGC</button>
+        <button data-f="auto" data-magnetic>سيارات</button>
+        <button data-f="brand" data-magnetic>علامات تجارية</button>
+      </div>
+    </div>
+
+    <div class="reels">
+      <article class="reel" data-cat="auto"><video muted loop playsinline preload="none" data-src="assets/video/titanium-1.mp4" poster="assets/video/titanium-1.webp"></video><div class="reel__meta"><b>Titanium</b><span>حماية وعناية بالسيارات</span></div></article>
+      <article class="reel" data-cat="ugc"><video muted loop playsinline preload="none" data-src="assets/video/gallery-1.mp4" poster="assets/video/gallery-1.webp"></video><div class="reel__meta"><b>Ali Alnaqbi Gallery</b><span>UGC · فن وديكور</span></div></article>
+      <article class="reel" data-cat="brand"><video muted loop playsinline preload="none" data-src="assets/video/brusho-1.mp4" poster="assets/video/brusho-1.webp"></video><div class="reel__meta"><b>Brusho Shilajit</b><span>إعلان منتج</span></div></article>
+      <article class="reel" data-cat="ugc"><video muted loop playsinline preload="none" data-src="assets/video/glow-1.mp4" poster="assets/video/glow-1.webp"></video><div class="reel__meta"><b>Global Glow</b><span>UGC · العناية بالبشرة</span></div></article>
+      <article class="reel" data-cat="auto"><video muted loop playsinline preload="none" data-src="assets/video/titanium-2.mp4" poster="assets/video/titanium-2.webp"></video><div class="reel__meta"><b>Titanium</b><span>تنظيف وتلميع</span></div></article>
+      <article class="reel" data-cat="ugc"><video muted loop playsinline preload="none" data-src="assets/video/frames-1.mp4" poster="assets/video/frames-1.webp"></video><div class="reel__meta"><b>Beyond Frames</b><span>UGC · لوحات فنية</span></div></article>
+      <article class="reel" data-cat="ugc"><video muted loop playsinline preload="none" data-src="assets/video/sign-1.mp4" poster="assets/video/sign-1.webp"></video><div class="reel__meta"><b>Sign Beauty</b><span>UGC · تجميل</span></div></article>
+      <article class="reel" data-cat="brand"><video muted loop playsinline preload="none" data-src="assets/video/brusho-2.mp4" poster="assets/video/brusho-2.webp"></video><div class="reel__meta"><b>Brusho Shilajit</b><span>محتوى توعوي</span></div></article>
+      <article class="reel" data-cat="auto"><video muted loop playsinline preload="none" data-src="assets/video/titanium-3.mp4" poster="assets/video/titanium-3.webp"></video><div class="reel__meta"><b>Titanium</b><span>عزل حراري</span></div></article>
+      <article class="reel" data-cat="ugc"><video muted loop playsinline preload="none" data-src="assets/video/labeeb-1.mp4" poster="assets/video/labeeb-1.webp"></video><div class="reel__meta"><b>Labeeb</b><span>UGC · منتج</span></div></article>
+      <article class="reel" data-cat="ugc"><video muted loop playsinline preload="none" data-src="assets/video/hindam-1.mp4" poster="assets/video/hindam-1.webp"></video><div class="reel__meta"><b>Hindam</b><span>UGC · أزياء</span></div></article>
+      <article class="reel" data-cat="auto"><video muted loop playsinline preload="none" data-src="assets/video/titanium-4.mp4" poster="assets/video/titanium-4.webp"></video><div class="reel__meta"><b>Titanium</b><span>اليوم الوطني</span></div></article>
+      <article class="reel" data-cat="ugc"><video muted loop playsinline preload="none" data-src="assets/video/halo-1.mp4" poster="assets/video/halo-1.webp"></video><div class="reel__meta"><b>Halo</b><span>UGC · لقطات خام</span></div></article>
+      <article class="reel" data-cat="brand"><video muted loop playsinline preload="none" data-src="assets/video/brusho-3.mp4" poster="assets/video/brusho-3.webp"></video><div class="reel__meta"><b>Brusho Shilajit</b><span>ريلز إعلاني</span></div></article>
+    </div>
+    <a href="https://www.instagram.com/neon8.888/" target="_blank" rel="noopener" class="work__more btn btn--lime" data-magnetic><span>المزيد على إنستغرام ↗</span></a>
+  </section>
+
+  <!-- SERVICES (horizontal) -->
+  <section class="services" id="services" data-theme="dark">
+    <div class="services__pin">
+      <div class="services__head">
+        <p class="sec-head__num">02</p>
+        <h2 class="split-words">ماذا أصنع لعلامتك</h2>
+      </div>
+      <div class="services__track">
+        <article class="svc svc--orange">
+          <span class="svc__n">01</span>
+          <h3>استراتيجية المحتوى</h3>
+          <p>خطط شهرية مبنية على الجمهور والمنافسين والمواسم — من الهوك حتى الدعوة للشراء.</p>
+          <ul><li>تحليل الجمهور</li><li>تقويم محتوى</li><li>أفكار ريلز</li></ul>
+        </article>
+        <article class="svc svc--lime">
+          <span class="svc__n">02</span>
+          <h3>تصوير UGC وإخراج</h3>
+          <p>فيديوهات بأسلوب صانع المحتوى، طبيعية وقريبة من الناس، مصوّرة ومُمنتجة بالكامل.</p>
+          <ul><li>سكريبت وهوكات</li><li>تصوير منتجات</li><li>مونتاج</li></ul>
+        </article>
+        <article class="svc svc--purple">
+          <span class="svc__n">03</span>
+          <h3>إعلانات ميتا</h3>
+          <p>حملات فيسبوك وإنستغرام مُقاسة بالأرقام: استهداف، اختبار إبداعي، وتحسين مستمر.</p>
+          <ul><li>إعداد الحملات</li><li>A/B Testing</li><li>تقارير أداء</li></ul>
+        </article>
+        <article class="svc svc--ink">
+          <span class="svc__n">04</span>
+          <h3>تصميم السوشال</h3>
+          <p>هوية بصرية متسقة لكل منشور وستوري وبانر — تصاميم تُقرأ في ثانية.</p>
+          <ul><li>منشورات وكاروسيل</li><li>ستوري وبانرات</li><li>عروض موسمية</li></ul>
+        </article>
+        <article class="svc svc--copy">
+          <span class="svc__n">05</span>
+          <h3>كتابة المحتوى</h3>
+          <p>كابشن، سكريبتات، ونصوص إعلانية بلهجة جمهورك — كلمات تبيع بدون أن تصرخ.</p>
+          <ul><li>Copywriting</li><li>سكريبت فيديو</li><li>رسائل إعلانية</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGNS -->
+  <section class="designs" id="designs" data-theme="lime">
+    <div class="sec-head">
+      <p class="sec-head__num">03</p>
+      <h2 class="sec-head__title split-words">تصاميم سوشال ميديا</h2>
+      <p class="sec-head__sub">أكثر من 350 تصميماً لعلامة Brusho Shilajit وحدها — هذه عينة.</p>
+    </div>
+    <div class="rows">
+      <div class="row" data-dir="1">
+        <div class="row__track">
+          <img src="assets/img/work/brusho-01.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-03.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-05.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-06.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-07.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-08.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-09.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-10.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-11.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-12.webp" alt="تصميم Brusho" loading="lazy">
+        </div>
+      </div>
+      <div class="row" data-dir="-1">
+        <div class="row__track">
+          <img src="assets/img/work/brusho-13.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-14.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-15.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-17.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-18.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-19.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-20.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-21.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-22.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-23.webp" alt="تصميم Brusho" loading="lazy"><img src="assets/img/work/brusho-24.webp" alt="تصميم Brusho" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPAIGN FAN -->
+  <section class="fan" data-theme="orange">
+    <div class="fan__pin">
+      <div class="fan__copy">
+        <p class="sec-head__num">04</p>
+        <h2 class="split-words">حملة ملابس رياضية</h2>
+        <p>سلسلة ستوريات بعروض وأسعار، بخط عربي جريء وتكوين يجعل المنتج هو البطل.</p>
+      </div>
+      <div class="fan__stage">
+        <img src="assets/img/work/anafitt-1.webp" alt="تصميم حملة ملابس رياضية" loading="lazy">
+        <img src="assets/img/work/anafitt-2.webp" alt="تصميم حملة ملابس رياضية" loading="lazy">
+        <img src="assets/img/work/anafitt-3.webp" alt="تصميم حملة ملابس رياضية" loading="lazy">
+        <img src="assets/img/work/anafitt-4.webp" alt="تصميم حملة ملابس رياضية" loading="lazy">
+        <img src="assets/img/work/anafitt-5.webp" alt="تصميم حملة ملابس رياضية" loading="lazy">
+        <img src="assets/img/work/anafitt-6.webp" alt="تصميم حملة ملابس رياضية" loading="lazy">
+        <img src="assets/img/work/anafitt-7.webp" alt="تصميم حملة ملابس رياضية" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="numbers" data-theme="dark">
+    <div class="num"><b data-count="2019">0</b><span>بداية الرحلة</span></div>
+    <div class="num"><b data-count="10" data-suffix="+">0</b><span>وكالات وجهات عمل</span></div>
+    <div class="num"><b data-count="350" data-suffix="+">0</b><span>تصميم لعلامة واحدة</span></div>
+    <div class="num"><b data-count="10">0</b><span>شهادات Meta · Google · IE</span></div>
+  </section>
+
+  <!-- ABOUT / EXPERIENCE -->
+  <section class="about" id="about" data-theme="dark">
+    <div class="about__top">
+      <div class="about__logo" aria-hidden="true"></div>
+      <div>
+        <p class="sec-head__num">05</p>
+        <h2 class="split-words">أنا عزت — وهذه NEON</h2>
+        <p class="about__lead">أخصائي أداء وسوشال ميديا، حاصل على بكالوريوس التسويق وإدارة الأعمال من جامعة تشرين وأتابع الماجستير في إدارة الأعمال. أعمل منذ 2022 خبير سوشال ميديا في <b>Zeed Agency</b> بدبي، وNEON هي هويتي الشخصية في صناعة المحتوى والتصوير: ثلاثة ألوان، طاقة واحدة.</p>
+        <div class="swatches">
+          <button class="sw sw--orange" data-copy="#F65401"><span>برتقالي نيون</span><code>#F65401</code></button>
+          <button class="sw sw--purple" data-copy="#4A116F"><span>بنفسجي نيون</span><code>#4A116F</code></button>
+          <button class="sw sw--lime" data-copy="#CAFC05"><span>ليموني نيون</span><code>#CAFC05</code></button>
+        </div>
+      </div>
+    </div>
+
+    <ol class="xp">
+      <li data-c="orange"><span class="xp__y">2022 — الآن</span><b>Social Media Expert</b><span class="xp__co">Zeed Agency · دبي</span></li>
+      <li data-c="lime"><span class="xp__y">2022 — 2023</span><b>Marketing Expert</b><span class="xp__co">Kuzluk Agency · تركيا</span></li>
+      <li data-c="purple"><span class="xp__y">2022 — 2023</span><b>Marketing Expert</b><span class="xp__co">Verona Trading · أبوظبي</span></li>
+      <li data-c="orange"><span class="xp__y">2022</span><b>Social Media Specialist</b><span class="xp__co">Uranus Agency</span></li>
+      <li data-c="lime"><span class="xp__y">2021 — 2022</span><b>Marketing Specialist</b><span class="xp__co">MJ Photographic Studio</span></li>
+      <li data-c="purple"><span class="xp__y">2021 — 2022</span><b>Social Media Specialist</b><span class="xp__co">Multitasker Agency · Link Workspace</span></li>
+      <li data-c="orange"><span class="xp__y">2021 — 2023</span><b>Social Media Specialist</b><span class="xp__co">Edrak</span></li>
+      <li data-c="lime"><span class="xp__y">2019 — 2021</span><b>Marketing · Internship</b><span class="xp__co">Mints Creative · Appjad</span></li>
+    </ol>
+
+    <div class="certs">
+      <span>Meta · Advertising with Meta</span><span>Meta · Fundamentals of Social Media Advertising</span><span>Meta · Measure &amp; Optimize Campaigns</span><span>Meta · Social Media Management</span><span>Meta · Social Media Marketing</span><span>Google · Digital Marketing &amp; E-commerce</span><span>Google · Data Analysis</span><span>IE Business School · Marketing Mix</span><span>IE · Positioning</span><span>IE · Market Research</span>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <div class="ticker ticker--clients" aria-label="علامات عملت معها">
+    <div class="ticker__track" data-speed="-0.7">
+      <span>Zeed Agency</span><b>●</b><span>Brusho Shilajit</span><b>●</b><span>Titanium</span><b>●</b><span>Ali Alnaqbi Gallery</span><b>●</b><span>Beyond Frames</span><b>●</b><span>Global Glow</span><b>●</b><span>Sign Beauty</span><b>●</b><span>Hindam</span><b>●</b><span>Labeeb</span><b>●</b><span>Halo</span><b>●</b><span>Al Sawadi</span><b>●</b><span>Neso Stylish</span><b>●</b>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact" data-theme="lime">
+    <p class="contact__kicker">— عندك منتج يستحق أن يُرى؟</p>
+    <h2 class="contact__title">
+      <span class="line"><span class="line__in">لنصنع</span></span>
+      <span class="line"><span class="line__in">شيئاً <em>يُرى</em></span></span>
+    </h2>
+    <div class="contact__links">
+      <a href="mailto:Ezzatsh808@gmail.com" class="btn btn--ink" data-magnetic><span>Ezzatsh808@gmail.com</span></a>
+      <a href="https://wa.me/971501317044" target="_blank" rel="noopener" class="btn btn--ink" data-magnetic><span>واتساب ↗</span></a>
+      <a href="https://www.instagram.com/neon8.888/" target="_blank" rel="noopener" class="btn btn--ink" data-magnetic><span>إنستغرام ↗</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" data-theme="dark">
+  <div class="footer__big" aria-hidden="true">
+    <span class="fl fl--o"></span><span class="fl fl--p"></span><span class="fl fl--l"></span>
+  </div>
+  <div class="footer__row">
+    <span>© <span id="yr">2026</span> عزت شيخ محمد</span>
+    <span dir="ltr">+971 50 131 7044</span>
+    <a href="#top" data-magnetic>للأعلى ↑</a>
   </div>
 </footer>
 
-<script src="assets/js/script.js"></script>
+<!-- Lightbox -->
+<div class="lightbox" aria-hidden="true">
+  <button class="lightbox__close" aria-label="إغلاق">✕</button>
+  <video class="lightbox__video" playsinline controls></video>
+  <div class="lightbox__cap"></div>
+</div>
+
+<div class="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
